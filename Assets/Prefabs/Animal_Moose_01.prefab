@@ -102,6 +102,7 @@ GameObject:
   - component: {fileID: 3274788234308398554}
   - component: {fileID: 6795140759184974107}
   - component: {fileID: 1416329488158180857}
+  - component: {fileID: 7778571741276140079}
   m_Layer: 0
   m_Name: Animal_Moose_01
   m_TagString: Untagged
@@ -169,6 +170,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MoveForward
   speed: 15
+--- !u!114 &7778571741276140079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 357688411686810509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f461fab7ddc0674283636ae3f7cd2b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DestroyOutOfBounds
 --- !u!1 &2421969316608042119
 GameObject:
   m_ObjectHideFlags: 0
