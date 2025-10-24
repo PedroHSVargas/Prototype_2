@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
     public float speed = 10.0f;
     public float xRange = 10;
     public GameObject projectilePrefab;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -29,6 +30,8 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            // Launch a projectile from the player
+            // Instantiate create a copy
             Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
         }
 
