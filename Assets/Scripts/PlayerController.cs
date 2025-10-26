@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     public float verticalInput;
     public float zMin;
     public float zMax;
-    
+    public Transform projectileSpawnPoint;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour
         {
             // Launch a projectile from the player
             // Instantiate create a copy
-            Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+            Instantiate(projectilePrefab, projectileSpawnPoint.position, projectilePrefab.transform.rotation);
         }
 
     }
