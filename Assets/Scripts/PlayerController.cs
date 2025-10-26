@@ -3,10 +3,13 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float horizontalInput;
-    public float verticalInput;    
     public float speed = 10.0f;
-    public float xRange = 20;
+    public float xRange = 20.0f;
     public GameObject projectilePrefab;
+    public float verticalInput;
+    public float zMin;
+    public float zMax;
+    
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -18,15 +21,27 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Horizontal movement limit
         if (transform.position.x < -xRange)
         {
             transform.position = new Vector3(-xRange, transform.position.y, transform.position.z);
         }
-        
+
         if (transform.position.x > xRange)
         {
             transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
         }
+
+        // Vertical movement limit
+        if (transform.position.z < zMin)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, zMin);
+        }
+        if (transform.position.z > zMax)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, zMax);
+        }
+        
         horizontalInput = Input.GetAxis("Horizontal");
         transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed);
         verticalInput = Input.GetAxis("Vertical");
